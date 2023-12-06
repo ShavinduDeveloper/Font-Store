@@ -1,0 +1,291 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 14, 2021, 7:26:48 PM
+    Author     : Shavindu Thushara Sa
+*/
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+
+@font-face {    
+    font-family: "aa";
+    src: url(Font/DriftType-Regular.ttf);
+}
+
+@font-face {    
+    font-family: "bb";
+    src: url(Font/RobotoSlab.ttf);
+}
+
+@font-face {    
+    font-family: "cc";
+    src: url(Font/Chococooky.ttf);
+}
+
+@font-face {    
+    font-family: "dd";
+    src: url(Font/Amelia-Normal.ttf);
+}
+
+@font-face {    
+    font-family: "ee";
+    src: url(Font/consola.ttf);
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: dd;
+    color: #272829;
+    user-select: none;
+    background: #111111;
+}
+
+/* NAVIGATION BAR */
+
+.navbar{
+    position: fixed;
+    top: 0;
+    margin-bottom: 0; 
+    width: 100%
+}
+
+#navbar-brand{
+    font-family: bb;
+    color: #31d879;
+    font-weight: normal;
+    font-style: normal;
+    overflow: visible;
+    margin-left: 20px
+}
+
+/* COVER SECTION */
+
+#Cover{
+    height: auto;
+    font-size: 60px;
+    font-family: aa;
+    font-weight: bolder;
+    background: #31d879;
+    text-align: center;
+}
+
+#Cover div p{
+    display: block;
+    padding-top: 30vh;
+    margin: 0 auto 0px auto;
+}
+
+#Cover div h1{
+    font-family: cc;
+    font-size: 20px;
+    margin: 10px auto 0 auto;
+}
+
+#Cover div a{
+    color: #111111;
+    font-size: 50px;
+    margin: 0 auto 1% auto;
+    text-decoration: none;
+}
+
+#Cover div{
+    height: 100vh;
+    padding-bottom: 20px;
+}
+
+#Cover div a:hover{
+    color: #31d879;
+    background: #111111;
+    border: 4px solid #111111;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+}
+
+/* ABOUT SECTION */
+
+#About div{
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+#About div h1{
+    font-family: bb;
+    color: #31d879;
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    font-size: 20px;
+}
+
+.top{
+    padding-top: 20vh;
+}
+
+.und{
+    margin: 0;
+    transform: translateY(-20px);
+}
+
+#about-p{
+    color: #fff;
+    font-family: ee;
+    margin: 40px 50px 0 50px;
+    text-align: justify;
+}
+
+
+#About div a{
+    text-align: center;
+    color: #31d879;
+    font-size: 50px;
+    margin: 0 auto 1% auto;
+    text-decoration: none;
+}
+
+
+#About div a:hover{
+    color: #000;
+    background: #31d879;
+    border: 4px solid #31d879;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+}
+
+/* Features SECTION */
+
+#features{
+    height: auto;
+    background: #31d879;
+    text-align: center;
+}
+
+#features div h1{
+    font-family: bb;
+    color: #111111;
+    font-weight: bolder;
+    font-style: normal;
+    text-align: center;
+    font-size: 25px;
+}
+
+#features-p{
+    color: #111111;
+    font-family: ee;
+    margin: 40px 50px 0 50px;
+    text-align: justify;
+    line-height: 40px;
+    list-style: inside circle ;
+}
+
+#features .resume-item h5 {
+    font-size: 16px;
+    background: #000000;
+    border: 1px solid #000;
+    border-radius: 12px;
+    padding: 10px 30px;
+    display: flex;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #31d879;
+}
+
+#features .resume-item:hover h5 {
+    background: transparent;
+    color: #000;
+}
+#features .resume-item:hover li {
+    font-weight: bold;
+}
+
+#features div a{
+    text-align: center;
+    color: #000;
+    font-size: 50px;
+    margin: 50px auto 10% auto;
+    text-decoration: none;
+}
+
+#features div a:hover{
+    color: #31d879;
+    background: #000000;
+    border: 4px solid #000;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+}
+
+/* Features SECTION */
+
+/* font SECTION */
+
+#fonts{
+    height: auto;
+    background: #111111;
+    text-align: center;
+    margin-bottom: 30vh;
+}
+
+#fonts div h1{
+    font-family: bb;
+    color: #31d879;
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    font-size: 20px;
+}
+
+#fonts-p{
+    color: #fff;
+    font-family: ee;
+    margin: 40px 50px 0 50px;
+    text-align: justify;
+}
+
+.carousel-inner center{
+    height: 350px;
+    margin: 20px 0 20px 0;
+}
+
+#footers div{
+    position: relative;
+    float: right;
+    margin: 0 50px 20px 0;
+    z-index: 20;
+}
+
+#footers div a{
+    text-align: center;
+    color: #31d879;
+    font-size: 50px;
+    margin: 0 auto 1% auto;
+    text-decoration: none;
+}
+
+#footers div a:hover{
+    color: #000;
+    background: #31d879;
+    border: 4px solid #31d879;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+}
+.company{
+    color: #31d879;
+}
+
+.footer {
+    background-color: #000;
+    color: #999999; 
+    text-align: left;
+    padding: 15px 0 0 50px; 
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
