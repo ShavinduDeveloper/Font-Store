@@ -35,24 +35,19 @@ and open the template in the editor.
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link" aria-current="page" href="#ho">Homepage</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
+                            <a class="nav-link" href="#About">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                            <a class="nav-link" aria-current="page" href="#features">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#fonts">Fonts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Contact Us</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
@@ -191,6 +186,77 @@ and open the template in the editor.
             </div>
         </div>
 
+        <!-- features -->
+        <div id="contact" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div>
+                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasTopLabel">Contact Us</h5>
+                        <a type="button" class="bi bi-x-circle-fill" data-bs-dismiss="offcanvas" aria-label="Close"></a>
+                    </div>
+                    <div class="offcanvas-body">
+                        <section id="contact" class="contact">
+                            <div class="row con">
+                                <div class="col-lg-5 d-flex align-items-stretch">
+                                    <div class="info">
+                                        <div class="col-lg-12 col-md-5 col-sm-5 col-xs-12">
+                                            <div class="address">
+                                                <i class="bi bi-geo-alt"></i>
+                                                <h4>Location:</h4>
+                                                <p>73 / A / 4,<br>Badanagodagama,<br>Beruwala,<br>Sri Lanka.</p>
+                                            </div>
+                                            <div class="email">
+                                                <i class="bi bi-envelope"></i>
+                                                <h4>Email:</h4>
+                                                <p>shavindusampath@gmail.com</p>
+                                            </div>
+
+                                            <div class="phone">
+                                                <i class="bi bi-phone"></i>
+                                                <h4>Call:</h4>
+                                                <p>+94 76 129 6058</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-7 col-sm-7 col-xs-12">
+                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d855.5837209547004!2d80.02032682916433!3d6.4793623322458185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjgnNDUuNyJOIDgwwrAwMScxNS4yIkU!5e1!3m2!1sen!2slk!4v1629371321296!5m2!1sen!2slk" style="border:0; width: 100%; height: 290px;" allowfullscreen="" loading="lazy"></iframe>                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12 mt-lg-0 d-flex  align-items-stretch">
+                                    <form action="https://formspree.io/f/xvonzyrg" method="POST" class="php-email-form">
+                                        <div class="headding">
+                                            <h4>Your Message</h4>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-6">
+                                                <label for="name">Your Name</label>
+                                                <input type="text" name="Name" class="form-control" id="name" required>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="name">Your Email</label>
+                                                <input type="email" class="form-control" name="Email" id="email" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="name">Subject</label>
+                                            <input type="text" class="form-control" name="Subject" id="subject" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="name">Message</label>
+                                            <textarea class="form-control" name="Message" rows="10" required></textarea>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit">Send Message</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div id="footers">
             <div>
                 <a class="bi bi-arrow-up-circle-fill" href="#ho"></a>
@@ -202,7 +268,6 @@ and open the template in the editor.
             </div>
         </footer>
     </body>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
