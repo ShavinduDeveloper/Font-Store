@@ -19,7 +19,7 @@ and open the template in the editor.
 
 @font-face {
     font-family: "bb";
-    src: url(Font/RobotoSlab.ttf);
+    src: url(Font/Roboto Slab.ttf);
 }
 
 @font-face {
@@ -29,13 +29,14 @@ and open the template in the editor.
 
 @font-face {
     font-family: "dd";
-    src: url(Font/Amelia-Normal.ttf);
+    src: url(Font/Amelia Normal.ttf);
 }
 
 @font-face {
     font-family: "ee";
-    src: url(Font/consola.ttf);
+    src: url(Font/Consolab.ttf);
 }
+
 body {
     margin: 0;
     padding: 0;
@@ -51,7 +52,8 @@ body {
     position: fixed;
     top: 0;
     margin-bottom: 0;
-    width: 100%
+    width: 100%;
+    z-index: 2;
 }
 
 #navbar-brand{
@@ -169,6 +171,7 @@ body {
     height: auto;
     background: #31d879;
     text-align: center;
+    z-index: 1;
 }
 
 #features div h1{
@@ -226,31 +229,20 @@ body {
     height: 50px;
 }
 
-/* Features SECTION */
-
-/* font SECTION */
-
-#fonts{
-    height: auto;
-    background: #111111;
-    text-align: center;
-    margin-bottom: 30vh;
+.carousel-indicators {
+    z-index: 1;
 }
 
-#fonts div h1{
-    font-family: bb;
-    color: #31d879;
-    font-weight: normal;
-    font-style: normal;
-    text-align: center;
-    font-size: 20px;
+.carousel-indicators [data-bs-target]{
+    background-color: #333;
+    border: 1px solid #fff;
+    height: 10px;
+
 }
 
-#fonts-p{
-    color: #fff;
-    font-family: ee;
-    margin: 40px 50px 0 50px;
-    text-align: justify;
+.carousel-indicators [data-bs-target] .active {
+    background-color: #f8f9fa;
+    border-color: #333;
 }
 
 .carousel-inner center{
@@ -262,7 +254,7 @@ body {
     position: relative;
     float: right;
     margin: 0 50px 20px 0;
-    z-index: 20;
+    z-index: 1;
 }
 
 #footers div a{
@@ -449,7 +441,7 @@ body {
     padding: 10px 24px;
     color: #18d26e;
     transition: 0.4s;
-    border-radius: 4px;    
+    border-radius: 4px;
     font-family: ee;
 }
 
@@ -486,5 +478,218 @@ body {
 
 #contact div a:hover{
     color: red;
-    
+
+}
+
+/* font SECTION */
+
+#fonts{
+    height: auto;
+    background: #111111;
+    margin-bottom: 30vh;
+}
+
+#fonts div h1{
+    font-family: bb;
+    color: #31d879;
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    font-size: 20px;
+}
+
+#fonts-p{
+    color: #fff;
+    font-family: ee;
+    margin: 40px 50px 0 50px;
+    text-align: justify;
+}
+
+
+.card{
+    background: none;
+    border:none;
+    margin: 20px;
+    margin: 50px 20px;
+    border: 2px solid #fff;
+    padding: 25px;
+    border-radius: 25px;
+
+}
+
+.font-title{
+    margin-top: 25px;
+    text-align: left;
+    color: #18d26e;
+    font-size: 20px;
+}
+.card hr{
+    color: #fff;
+}
+
+.marj{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.preview{
+    background: #222222;
+    padding: 25px;
+    border: 1px solid #999999;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: #fff;
+    font-size: 30px;
+}
+
+.modal-content{
+    height: fit-content;
+    color: #fff;
+    background: #111111;
+    padding: 20px 50px 20px 50px
+}
+
+#thanks div .offcanvas .offcanvas-title {
+    font-family: bb;
+    color: #31d879;
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    font-size: 20px;
+}
+
+.modal div a{
+    color: #31d879;
+    font-size: 30px;
+}
+
+.modal div a:hover{
+    color: red;
+}
+
+div #thank-text{
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    padding: 70px 20px;
+    font-family: bb;
+}
+
+#im{
+    align-content: center;
+    margin-bottom: 50px;
+}
+
+.card div a{
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+#dashboard div h1{
+    font-family: bb;
+    color: #31d879;
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    font-size: 20px;
+}
+
+.top{
+    padding-top: 20vh;
+}
+
+.und{
+    margin: 0;
+    transform: translateY(-20px);
+}
+
+#red{
+    text-align: left;
+    font-family: ee;
+    height: fit-content;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    form hr{
+        color: #fff;
+        margin-bottom:  30px;
+    }
+}
+
+
+
+#red .headding h4 {
+    font-family: ee;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #18d26e;
+}
+
+.form-label{
+    color: #fff;
+    font-size: 20px;
+    margin: 25px 0px;
+}
+
+.dash .form-control{
+    height: 60px;
+    font-size: 20px;
+}
+
+#btn-save button{
+    padding: 15px 50px;
+    margin-top: 25px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+}
+
+#success-message {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#fno{
+    border-radius: 20px;
+    cursor: default;
+}
+
+
+#btn-save {
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#upfont{
+    background: #444744;
+    padding: 10px;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    color: #fff;
+    line-height: 30pt;
+    cursor: pointer;
+}
+
+#fol{
+    color: #fff;
+    font-size: 20px;
+    margin: 25px 0px;
+}
+
+#s2{
+    margin-bottom: 50px;
+}
+
+#btn-save #but{
+    padding: 15px 50px;
+    margin-top: 25px;
+    margin-right: 20px;
+    margin-bottom: 50px;
 }

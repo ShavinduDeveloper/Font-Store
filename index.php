@@ -13,17 +13,17 @@ and open the template in the editor.
         <title>Font Store | Free to Download</title>
 
         <!--Title bar icon-->
-        <link rel ="icon" href ="Icon.png" type ="image/x-icon">
-
+        <link rel ="icon" href ="src/Icon.png" type ="image/x-icon">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-
 
         <link href="Style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body id="ho">
         <?php
-        // put your code here
+        require_once 'include/config.php';
+        include 'include/functions.php';
+        $fontArray = GetFontTable($conn);
         ?>
         <a href="src/vendor/font-awesome/fonts/Amelia-Normal.ttf"></a>
         <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
@@ -48,6 +48,9 @@ and open the template in the editor.
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin.php"><i class="bi bi-gear"></i></a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
@@ -108,13 +111,13 @@ and open the template in the editor.
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <center><img src="original.png" class="d-block " width="300px" alt="..."></center>
+                                <center><img src="src/original.png" class="d-block " width="300px" alt="..."></center>
                             </div> 
                             <div class="carousel-item">
-                                <center><img src="Fast download.png" class="d-block" width="300px" alt="..."></center>
+                                <center><img src="src/Fast download.png" class="d-block" width="300px" alt="..."></center>
                             </div>
                             <div class="carousel-item">
-                                <center><img src="Totally Free.png" class="d-block" width="300px" alt="..."></center>
+                                <center><img src="src/Totally Free.png" class="d-block" width="300px" alt="..."></center>
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -126,7 +129,6 @@ and open the template in the editor.
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-
 
                     <ul id="features-p">
                         <div class="resume-item">
@@ -169,24 +171,47 @@ and open the template in the editor.
                 <h1 class="top">Fonts</h1>
                 <h1 class="und">_&nbsp;&nbsp;&nbsp;&nbsp;_</h1>
                 <br>
-                <div>
-                    <p id="fonts-p">Hi, My Name is Shavindu Thushara Sampath. 
-                        This is a Web Application to Download the Font to help for your Day to Day Computer based Activies. 
-                        Here is Collection of populer fonts I ever Used. Credits of the this Fonts are goes to there Real Owners and Makers. 
-                        We are a team of font enthusiasts who believe that every design deserves a unique typeface. 
-                        <br><br>Our mission is to make it easy for designers to find and download high-quality, free fonts. 
-                        With a constantly growing collection of over [number] fonts, we strive to provide a diverse range of styles for every design project. 
-                        Whether you're working on a professional project or just having fun with typography, we have a font for you. 
-                        <br><br>Our website is user-friendly, with a simple interface that makes it easy to search for the perfect font. 
-                        We carefully curate our collection, ensuring that every font is of the highest quality and free for personal and commercial use. 
-                        With regular updates and new font releases, you're sure to find the right font for your project every time you visit. 
-                        <br><br>Thank you for choosing us as your font destination. We're excited to be a part of your design journey and can't wait to see what you create.
-                    </p>
-                </div>
+
+                <?php
+                if (!empty($fontArray)) {
+                    foreach ($fontArray as $selectedArray) {
+                        ?>
+                        <style>
+                            @font-face {
+                                font-family: "<?= $selectedArray['font_name'] ?>";
+                                src: url(Font/<?= $selectedArray['file_name'] ?>);
+                            }
+                        </style>
+                        <div class="container">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <a>
+                                        <button id="fno" class="btn btn-outline-danger"><?= $selectedArray['font_id'] ?></button>
+                                    </a>
+                                    <h2 class="font-title"><?= $selectedArray['font_name']?></h2>
+                                    <hr>
+                                    <p  class="preview" style="font-family: '<?= $selectedArray['font_name'] ?>'">
+                                        Typography is the art and technique of arranging type to make written language legible, readable and appealing when displayed.
+                                    </p>
+                                    <div>
+                                        <a href="Font/<?= $selectedArray['file_name'] ?>" data-bs-toggle="modal" data-bs-target="#downloadSuccessModal">
+                                            <button class="btn btn-success" onclick="downloadFont('<?= $selectedArray['file_name'] ?>')">Download</button>
+                                        </a>
+                                        <a href="#">
+                                            <button class="btn btn-light">View</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                }
+                ?>
             </div>
         </div>
 
-        <!-- features -->
+        <!-- contact -->
         <div id="contact" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div>
                 <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
@@ -257,6 +282,28 @@ and open the template in the editor.
             </div>
         </div>
 
+        <!-- Thanks -->
+        <div class="modal fade" id="downloadSuccessModal" tabindex="-1" aria-labelledby="downloadSuccessModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="downloadSuccessModalLabel">Font face Download Successful...</h5>
+                        <a type="button" class="bi bi-x-circle-fill" data-bs-dismiss="modal" aria-label="Close"></a>
+                    </div>
+                    <div class="modal-body">
+                        <section id="than" class="thank">
+                            <div class="row">
+                                <div id="thank-text" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <img id="im" src="src/undraw_a_whole_year_vnfm.png" width="300px" alt="alt"/>
+                                    <h6>Thank You For Downloading Your Fonts.</h6>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div id="footers">
             <div>
                 <a class="bi bi-arrow-up-circle-fill" href="#ho"></a>
@@ -264,10 +311,29 @@ and open the template in the editor.
         </div>
         <footer class="footer">
             <div class="container-fluid">
-                <p>&copy; 2023 <i class="company">STS Development.</i> All rights reserved.</p>
+                <p>&copy; 2023 <i class="company"> STS Development.</i> All rights reserved.</p>
             </div>
         </footer>
     </body>
+    <script>
+        function downloadFont(fileName) {
+            // Replace the download link with the actual path to your fonts
+            const downloadLink = `Font/${fileName}`;
+
+            // Create an invisible anchor element to trigger the download
+            const anchor = document.createElement('a');
+            anchor.href = downloadLink;
+            anchor.target = '_blank'; // Open in a new tab
+            anchor.download = fileName;
+            document.body.appendChild(anchor);
+            anchor.click();
+            document.body.removeChild(anchor);
+
+            // Trigger the modal
+            $('#downloadSuccessModal').modal('show');
+        }
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
