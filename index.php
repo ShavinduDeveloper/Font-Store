@@ -188,7 +188,7 @@ and open the template in the editor.
                                     <a>
                                         <button id="fno" class="btn btn-outline-danger"><?= $selectedArray['font_id'] ?></button>
                                     </a>
-                                    <h2 class="font-title"><?= $selectedArray['font_name']?></h2>
+                                    <h2 class="font-title"><?= $selectedArray['font_name'] ?></h2>
                                     <hr>
                                     <p  class="preview" style="font-family: '<?= $selectedArray['font_name'] ?>'">
                                         Typography is the art and technique of arranging type to make written language legible, readable and appealing when displayed.
@@ -197,7 +197,7 @@ and open the template in the editor.
                                         <a href="Font/<?= $selectedArray['file_name'] ?>" data-bs-toggle="modal" data-bs-target="#downloadSuccessModal">
                                             <button class="btn btn-success" onclick="downloadFont('<?= $selectedArray['file_name'] ?>')">Download</button>
                                         </a>
-                                        <a href="#">
+                                        <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasView" aria-controls="offcanvasView">
                                             <button class="btn btn-light">View</button>
                                         </a>
                                     </div>
@@ -281,6 +281,121 @@ and open the template in the editor.
                 </div>
             </div>
         </div>
+
+
+        <!-- view -->
+        <div id="view" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div>
+                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasView" aria-labelledby="offcanvasTopLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasTopLabel">Overview Panel.</h5>
+                        <a type="button" class="bi bi-x-circle-fill" data-bs-dismiss="offcanvas" aria-label="Close"></a>
+                    </div>
+                    <div class="offcanvas-body">
+                        <section id="view" class="view">
+                            <div class="row con">
+                                <div class="tb">
+                                    <div class="container text-center">
+                                        <div class="row row-cols-auto">
+                                            <div class="col">a</div>
+                                            <div class="col">b</div>
+                                            <div class="col">c</div>
+                                            <div class="col">d</div>
+                                            <div class="col">e</div>
+                                            <div class="col">f</div>
+                                            <div class="col">g</div>
+                                            <div class="col">h</div>
+                                            <div class="col">i</div>
+                                            <div class="col">j</div>
+                                            <div class="col">k</div>
+                                            <div class="col">l</div>
+                                            <div class="col">m</div>
+                                            <div class="col">n</div>
+                                            <div class="col">o</div>
+                                            <div class="col">p</div>
+                                            <div class="col">q</div>
+                                            <div class="col">r</div>
+                                            <div class="col">s</div>
+                                            <div class="col">t</div>
+                                            <div class="col">u</div>
+                                            <div class="col">v</div>
+                                            <div class="col">w</div>
+                                            <div class="col">x</div>
+                                            <div class="col">y</div>
+                                            <div class="col">z</div>
+                                        </div>
+                                        <hr>
+                                        <div class="row row-cols-auto">
+                                            <div class="col">A</div>
+                                            <div class="col">B</div>
+                                            <div class="col">C</div>
+                                            <div class="col">D</div>
+                                            <div class="col">E</div>
+                                            <div class="col">F</div>
+                                            <div class="col">G</div>
+                                            <div class="col">H</div>
+                                            <div class="col">I</div>
+                                            <div class="col">J</div>
+                                            <div class="col">K</div>
+                                            <div class="col">L</div>
+                                            <div class="col">M</div>
+                                            <div class="col">N</div>
+                                            <div class="col">O</div>
+                                            <div class="col">P</div>
+                                            <div class="col">Q</div>
+                                            <div class="col">R</div>
+                                            <div class="col">S</div>
+                                            <div class="col">T</div>
+                                            <div class="col">U</div>
+                                            <div class="col">V</div>
+                                            <div class="col">W</div>
+                                            <div class="col">X</div>
+                                            <div class="col">Y</div>
+                                            <div class="col">Z</div>
+                                        </div>
+                                        <hr>
+                                        <div class="row row-cols-auto">
+                                            <div class="col">0</div>
+                                            <div class="col">1</div>
+                                            <div class="col">2</div>
+                                            <div class="col">3</div>
+                                            <div class="col">4</div>
+                                            <div class="col">5</div>
+                                            <div class="col">6</div>
+                                            <div class="col">7</div>
+                                            <div class="col">8</div>
+                                            <div class="col">9</div>
+                                        </div>
+                                        <hr>
+                                        <div class="row row-cols-auto">
+                                            <div class="col">.</div>
+                                            <div class="col">,</div>
+                                            <div class="col">+</div>
+                                            <div class="col">-</div>
+                                            <div class="col">!</div>
+                                            <div class="col">@</div>
+                                            <div class="col">#</div>
+                                            <div class="col">%</div>
+                                            <div class="col">?</div>
+                                            <div class="col">&</div>
+                                            <div class="col">_</div>
+                                            <div class="col">( )</div>
+                                            <div class="col">{ }</div>
+                                            <div class="col">[ ]</div>
+                                            <div class="col">' '</div>
+                                            <div class="col">" "</div>
+                                            <div class="col">:</div>
+                                            <div class="col">;</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!-- Thanks -->
         <div class="modal fade" id="downloadSuccessModal" tabindex="-1" aria-labelledby="downloadSuccessModalLabel" aria-hidden="true">
